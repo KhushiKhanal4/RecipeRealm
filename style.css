@@ -23,8 +23,13 @@ html {
     background: linear-gradient(to right, rgb(252, 244, 129),rgb(250, 169, 77))  ;
     margin: 0;
    position: sticky;
-    padding: 1rem;
+    padding: 10px;
     box-shadow: 2px 2px 2px gray;
+}
+
+.navBar li img{
+  border-radius: 2rem;
+    width: 5rem;
 }
 
 .navBar li a{
