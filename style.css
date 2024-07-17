@@ -1,138 +1,120 @@
 @import url('https://fonts.googleapis.com/css2?family=Calligraffitti&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Ga+Maamli&family=Playwrite+AU+NSW:wght@100..400&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
-
+/* @import url('https://fonts.googleapis.com/css2?family=Ga+Maamli&family=Playwrite+AU+NSW:wght@100..400&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 
 body,
 html {
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    width: 100%;
-}
-
-.navBar{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    justify-content: space-around;
-    list-style: none;
-    align-items: center;
-    font-family:  "Playwrite AU NSW", cursive;
-    font-size: 1.2rem;
-    font-weight: 600;
-    background: linear-gradient(to right, rgb(252, 244, 129),rgb(250, 169, 77))  ;
-    margin: 0;
-   position: sticky;
-    padding: 10px;
-    box-shadow: 2px 2px 2px gray;
-}
-
-.navBar li img{
-  border-radius: 2rem;
-    width: 5rem;
-}
-
-.navBar li a{
-     text-decoration: none;
-      color: #014704;
-      position: relative;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100%;
 }
 
 
-.navBar li a:before{
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 3px;
-    width: 0%;
-    background: #006b05;
-    border-radius: 12px;
-    transition: all 0.4s ease;
-  }
-  .navBar li a:hover:before{
-    width: 100%;
-  }
-  .navBar li.center a:before{
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  .navBar li.upward a:before{
-    width: 100%;
-    bottom: -5px;
-    opacity: 0;
-  }
-  .navBar li.upward a:hover:before{
-    bottom: 0px;
-    opacity: 1;
-  }
-  .navBar li.forward a:before{
-    width: 100%;
-    transform: scaleX(0);
-    transform-origin: right;
-    transition: transform 0.4s ease;
-  }
-  .navBar li.forward a:hover:before{
-    transform: scaleX(1);
-    transform-origin: left;
-  }
+.navBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  justify-content: space-around;
+  list-style: none;
+  align-items: center;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.7rem;
+  font-weight: 600;
+  background: linear-gradient(to right, rgb(252, 247, 186), rgb(255, 255, 255));
+  margin: 0;
+  padding: 7px;
+  box-shadow: 2px 2px 2px gray;
+}
+
+.navBar li img {
+  border-radius: 1rem;
+  width: 5rem;
+  margin-top: 7px;
+
+}
+
+.navBar li a {
+  text-decoration: none;
+  color: #014704;
+  position: relative;
+}
+
+
+.navBar li a:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: #006b05;
+  border-radius: 12px;
+  transition: all 0.4s ease;
+}
+
+.navBar li a:hover:before {
+  width: 100%;
+}
 
 
 div.img_bg {
 
-    width: 100%;
-    height: 90vh;
-    overflow: hidden;
-    position: relative;
-    background-image: url(https://images.pexels.com/photos/1640773/pexels-photo-1640773.jpeg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    margin: 0;
-    padding: 0;
-   
+  width: 100%;
+  height: 80vh;
+  overflow: hidden;
+  position: relative;
+  background-image: url(https://images.pexels.com/photos/1640773/pexels-photo-1640773.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  margin: 0;
+  padding: 0;
+
 }
 
 .content {
-    font-family: "Calligraffitti", cursive;
-    font-weight: 700;
-    font-size: 1.5rem;
-    position: absolute;
-    top: 55%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: rgb(0, 0, 0);
-    animation: fadeInScale 2s ease-in-out forwards;
-    opacity: 0;
-    
+  font-family: "Calligraffitti", cursive;
+  font-weight: 700;
+  font-size: 1.5rem;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: rgb(0, 0, 0);
+  animation: fadeInScale 2s ease-in-out forwards;
+  opacity: 0;
+
 }
+
 
 
 @keyframes fadeInScale {
-    0% {
-        opacity: 0;
-        transform: translate(-50%, -50%) scale(0.9);
-    }
-    100% {
-        opacity: 1;
-        transform: translate(-50%, -50%) scale(1);
-    }
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
 }
 
-@media only screen  and (max-width:1120px) {
-    .content,.navBar{
-        font-size:1rem;
-    }
+@media only screen and (max-width:1120px) {
+  .content {
+    font-size: 1rem;
+  }
 
-    
-}
-@media only screen  and (max-width:590px) {
-    .content{
-        font-size:0.7rem;
-    }
+  .navBar {
+    font-size: 1.2rem;
+  }
+
 }
 
-
-
-
+@media only screen and (max-width:590px) {
+  .content {
+    font-size: 0.7rem;
+  }
+}
