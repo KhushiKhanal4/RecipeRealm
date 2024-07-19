@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recipe Finder</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="WOW\animate.css">
 </head>
 
 <body>
-    <header id="home">
+    <header>
 
         <nav class="nav">
 
@@ -32,13 +33,15 @@
         </nav>
 
     </header>
-    <div class="img_bg">
+    <div  id="home" class="img_bg">
 
         <div class="content">
             <h1>Discover Deliciousness !</h1>
             <p>Your Ultimate Recipe Finder</p>
         </div>
     </div>
+
+    <div class="line"></div>
 
     <section id="aboutUs">
         <h1 class="heading">About Us</h1>
@@ -48,20 +51,38 @@
             home cook, RecipeRealm offers a seamless and enjoyable experience for discovering and managing recipes.
             </p>
 
-            <div class="aboutFinder">
-                <span>
+            <div class="info">
+                <div>
                     <img src="https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&w=600" alt="">
-                </span>
-                <span>
+                </div>
+                <div>
                     <h3>Recipe Finder</h3>
                     <p>Our Recipe Finder feature allows you to explore an extensive collection of recipes from around the world. With a simple and intuitive search interface, you can easily find recipes based on ingredients, cuisine, cooking time, and dietary preferences. Each recipe includes detailed instructions, nutritional information, and user reviews to help you make the best choice for your next meal.</p>
-                </span>
+                </div>
+            </div>
+
+            <div id="rev" class="info">
+                <div>
+                    <img src="https://images.pexels.com/photos/793785/pexels-photo-793785.jpeg?auto=compress&cs=tinysrgb&w=600" alt="">
+                </div>
+                <div>
+                    <h3>Personal Recipe Manager</h3>
+                    <p>RecipeRealm offers a customizable recipe book tailored just for you. Users can easily add their own recipes, organize them into personal collections, and make adjustments as needed. It's your personal space for managing and enjoying your favorite recipes, making meal planning and cooking more enjoyable.
+
+                    </p>
+                </div>
             </div>
         </div>
 
     </section>
 
+    <div class="line"></div>
+
     <script src="script.js"></script>
+    <script src="WOW\wow.js"></script>
+    <script>
+        new WOW().init();
+    </script>
 </body>
 
 </html>

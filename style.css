@@ -4,6 +4,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Changa:wght@200..800&family=Playwrite+CU:wght@100..400&family=Satisfy&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Changa:wght@200..800&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playwrite+CU:wght@100..400&family=Satisfy&display=swap');
 
+
+
 body,
 html {
   margin: 0;
@@ -13,7 +15,9 @@ html {
   overflow-x: hidden;
   background-color: azure;
 }
-
+span{
+  display: inline-block;
+}
 header {
   position: sticky;
   top: 0px;
@@ -135,8 +139,8 @@ div.img_bg {
   transform: translate(-50%, -50%);
   text-align: center;
   color: #014704;
-  animation: fadeInScale 3s ease-in-out forwards;
-  opacity: 0;
+  animation: fadeInScale 3s ease-in-out forwards; 
+  animation-delay:  2s;
 
 }
 
@@ -153,7 +157,19 @@ div.img_bg {
   }
 }
 
+/* separation */
+
+.line{
+  height: 4px;
+  width: 100%;
+  background-color: #699270;
+}
+
 /* About Us section */
+
+#aboutUs {
+  margin: 1rem 8rem;
+}
 
 .heading {
   text-align: center;
@@ -161,10 +177,6 @@ div.img_bg {
   font-family: "Changa", sans-serif;
   color: #0e7013;
 
-}
-
-#aboutUs {
-  margin: 1rem 8rem;
 }
 
 .container {
@@ -178,38 +190,42 @@ div.img_bg {
 
 }
 
-
 .container>:first-child {
   font-size: 2rem;
   text-align: center;
 }
 
-.aboutFinder {
+.info {
   display: flex;
   flex-direction: row;
-  gap: 1.5rem; 
+  gap: 1.5rem;
   justify-content: space-between;
   align-items: center;
   margin: 32px 22px;
 }
 
-.aboutFinder span {
+.info div {
   flex: 1;
 }
 
-.aboutFinder img {
+.info img {
   max-width: 100%;
   height: auto;
   border-radius: 10px;
 }
 
-.aboutFinder h3 {
+.info h3 {
   margin-top: 0;
   font-size: 2rem;
 }
 
-.aboutFinder p {
+.info p {
   font-size: 1.2rem;
+}
+
+#rev{
+  display: flex;
+  flex-direction: row-reverse;
 }
 
 
@@ -233,12 +249,12 @@ div.img_bg {
     font-size: 1.5rem;
   }
 
-  .aboutFinder h3 {
+  .info h3 {
     margin-top: 0;
     font-size: 1.3rem;
   }
-  
-  .aboutFinder p {
+
+  .info p {
     font-size: 0.8rem;
   }
 
@@ -255,7 +271,7 @@ div.img_bg {
 
   div.img_bg {
     height: 60vh;
-   }
+  }
 }
 
 @media only screen and (max-width:900px) {
@@ -318,14 +334,15 @@ div.img_bg {
     font-size: 1rem;
   }
 
-  /* .aboutFinder h3 {
-    margin-top: 0;
-    font-size: 1rem;
-  }
-  
-  .aboutFinder p {
-    font-size: 0.5rem;
-  } */
-
 }
 
+@media only screen and (max-width:700px) {
+  .info,#rev {
+    flex-direction: column;
+  }
+
+  .info span {
+    width: 100%;
+    text-align: center;
+  }
+}
