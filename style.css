@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Calligraffitti&display=swap');
-/* @import url('https://fonts.googleapis.com/css2?family=Ga+Maamli&family=Playwrite+AU+NSW:wght@100..400&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+CU:wght@100..400&family=Satisfy&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 
 body,
@@ -24,6 +24,19 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 0 29px;
+
+  
+}
+.h3{
+  position: absolute;
+  left:8rem;
+  font-size: 1.7rem ;
+ font-family:  "Satisfy", cursive;
+ background: linear-gradient(to right, #fa6b18, #f7913e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
 }
 
 .navBar {
@@ -113,9 +126,21 @@ div.img_bg {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  color: rgb(0, 0, 0);
+  color: #014704;
   animation: fadeInScale 3s ease-in-out forwards;
   opacity: 0;
+
+}
+
+
+
+
+.heading{
+  text-align: center;
+  font-size:3.5rem;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: #002902;
+  animation: fadeInScale 3s ease-in-out;
 
 }
 
@@ -130,7 +155,6 @@ div.img_bg {
     transform: translate(-50%, -50%) scale(1);
   }
 }
-
 
 /* Responsiveness */
 
@@ -151,7 +175,7 @@ div.img_bg {
   }
 }
 
-@media only screen and (max-width:766px) {
+@media only screen and (max-width:900px) {
 
   .hamburger {
     display: block;
@@ -172,6 +196,12 @@ div.img_bg {
 
   .nav {
     padding-left: 5px;
+  }
+
+  .h3
+  {
+   left:6.5rem;
+   /* font-size: 1.2rem; */
   }
 
   .navBar {
