@@ -141,6 +141,7 @@ div.img_bg {
   color: #014704;
   animation: fadeInScale 3s ease-in-out forwards; 
   animation-delay:  2s;
+  opacity: 0;
 
 }
 
