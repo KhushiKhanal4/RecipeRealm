@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Calligraffitti&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playwrite+CU:wght@100..400&family=Satisfy&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Changa:wght@200..800&family=Playwrite+CU:wght@100..400&family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Changa:wght@200..800&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playwrite+CU:wght@100..400&family=Satisfy&display=swap');
 
 body,
 html {
@@ -9,9 +11,13 @@ html {
   height: 100vh;
   width: 100%;
   overflow-x: hidden;
+  background-color: azure;
 }
 
 header {
+  position: sticky;
+  top: 0px;
+  z-index: 10000;
   background: linear-gradient(to right, rgb(252, 247, 186), rgb(255, 255, 255));
 }
 
@@ -25,18 +31,20 @@ header {
   align-items: center;
   padding: 0 29px;
 
-  
+
+
 }
-.h3{
+
+.h3 {
   position: absolute;
-  left:8rem;
-  font-size: 1.7rem ;
- font-family:  "Satisfy", cursive;
- background: linear-gradient(to right, #fa6b18, #f7913e);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    color: transparent;
+  left: 8rem;
+  font-size: 1.7rem;
+  font-family: "Satisfy", cursive;
+  background: linear-gradient(to right, #fa6b18, #f7913e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
 }
 
 .navBar {
@@ -133,17 +141,6 @@ div.img_bg {
 }
 
 
-
-
-.heading{
-  text-align: center;
-  font-size:3.5rem;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  color: #002902;
-  animation: fadeInScale 3s ease-in-out;
-
-}
-
 @keyframes fadeInScale {
   0% {
     opacity: 0;
@@ -156,6 +153,67 @@ div.img_bg {
   }
 }
 
+/* About Us section */
+
+.heading {
+  text-align: center;
+  font-size: 2.5rem;
+  font-family: "Changa", sans-serif;
+  color: #0e7013;
+
+}
+
+#aboutUs {
+  margin: 1rem 8rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  font-family: "DM sans", sans-serif;
+  font-weight: 500;
+
+}
+
+
+.container>:first-child {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.aboutFinder {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem; 
+  justify-content: space-between;
+  align-items: center;
+  margin: 32px 22px;
+}
+
+.aboutFinder span {
+  flex: 1;
+}
+
+.aboutFinder img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.aboutFinder h3 {
+  margin-top: 0;
+  font-size: 2rem;
+}
+
+.aboutFinder p {
+  font-size: 1.2rem;
+}
+
+
+
 /* Responsiveness */
 
 @media only screen and (max-width:1120px) {
@@ -167,12 +225,37 @@ div.img_bg {
     font-size: 1.2rem;
   }
 
+  .heading {
+    font-size: 1.7rem;
+  }
+
+  .container>:first-child {
+    font-size: 1.5rem;
+  }
+
+  .aboutFinder h3 {
+    margin-top: 0;
+    font-size: 1.3rem;
+  }
+  
+  .aboutFinder p {
+    font-size: 0.8rem;
+  }
+
 }
 
 @media only screen and (max-width:590px) {
   .content {
     font-size: 0.7rem;
   }
+
+  .container>:first-child {
+    font-size: 1.3rem;
+  }
+
+  div.img_bg {
+    height: 60vh;
+   }
 }
 
 @media only screen and (max-width:900px) {
@@ -198,10 +281,9 @@ div.img_bg {
     padding-left: 5px;
   }
 
-  .h3
-  {
-   left:6.5rem;
-   /* font-size: 1.2rem; */
+  .h3 {
+    left: 6.5rem;
+    /* font-size: 1.2rem; */
   }
 
   .navBar {
@@ -223,6 +305,27 @@ div.img_bg {
     gap: 22px;
   }
 
- 
+
+  #aboutUs {
+    margin: 2rem;
+  }
+
+  .heading {
+    font-size: 1.5rem;
+  }
+
+  .container>:first-child {
+    font-size: 1rem;
+  }
+
+  /* .aboutFinder h3 {
+    margin-top: 0;
+    font-size: 1rem;
+  }
+  
+  .aboutFinder p {
+    font-size: 0.5rem;
+  } */
 
 }
+
