@@ -297,18 +297,25 @@ div.img_bg {
  }
 
 .modal{
-  max-width: 25%;
+  max-width: 76%;
   min-height: 10vh;
   margin: 22px;
   background:linear-gradient(to right, #eaf39a, #063001);
   padding: 12px;
   border-radius: 22px;
   font-family:"Oswald",sans-serif;
-  display:none;
+  
 }
+
+#output{
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
 
 .modal img{
   border-radius: 12px;
+  width: 100%;
 }
 
 .viewBtn{
@@ -357,19 +364,7 @@ div.img_bg {
 
 }
 
-@media only screen and (max-width:590px) {
-  .content {
-    font-size: 0.7rem;
-  }
 
-  .container>:first-child {
-    font-size: 1.3rem;
-  }
-
-  div.img_bg {
-    height: 60vh;
-  }
-}
 
 @media only screen and (max-width:900px) {
 
@@ -419,6 +414,7 @@ div.img_bg {
   }
 
 
+
   #aboutUs {
     margin: 2rem;
   }
@@ -442,4 +438,40 @@ div.img_bg {
     width: 100%;
     text-align: center;
   }
+
+  #output{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media only screen and (max-width:590px) {
+  .content {
+    font-size: 0.7rem;
+  }
+
+  .container>:first-child {
+    font-size: 1.3rem;
+  }
+
+  div.img_bg {
+    height: 70vh;
+  }
+
+  #output{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media only screen and (max-width:450px) {
+  #output{
+    grid-template-columns:1fr;
+    grid-area: auto;
+    margin-left: 42px;
+  }
+
+  div.img_bg {
+    height: 60vh;
+  }
+
+  
 }
