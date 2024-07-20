@@ -43,6 +43,47 @@ async function findRecipe(query){
 
 //viewResults Function
 
+function viewResult(results)
+{
+    const outputContainer =document.getElementById('output');
+    outputContainer.innerHTML='';
 
+    if(results.length===0)
+    {
+        outputContainer.textContent='No recipes found.';
+        return;
+    }
 
+    results.forEach(recipe =>{
+        const recipeModal = document.createElement('div');
+        recipeModal.classList.add('modal');
 
+        const recipeImg = document.createElement('img');
+        recipeImg.src = recipe.image;
+        recipeImg.alt = recipe.title;
+
+        const recipeName = document.createElement('h3');
+        recipeName.classList.add('name');
+        recipeName.textContent = recipe.title;
+
+        
+        const viewButton = document.createElement('button');
+        viewButton.classList.add('viewBtn');
+        viewButton.textContent = 'View Recipe';
+        viewButton.onclick = () => alert(`Viewing recipe for ${recipe.title}`);
+
+        recipeModal.appendChild(recipeImg);
+        recipeModal.appendChild(recipeName);
+        recipeModal.appendChild(viewButton);
+
+        outputContainer.appendChild(recipeModal);
+
+    });
+  
+}
+
+ document.querySelector('.btn-search').addEventListener('click', () => {
+        const query = document.querySelector('.input-search').value;
+        findRecipe(query);
+    });
+    

@@ -296,6 +296,8 @@ div.img_bg {
   transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
  }
 
+/* recipe modal styling */
+
 .modal{
   max-width: 76%;
   min-height: 10vh;
@@ -310,6 +312,7 @@ div.img_bg {
 #output{
   display:grid;
   grid-template-columns: 1fr 1fr 1fr;
+  padding-top: 52px;
 }
 
 
