@@ -302,7 +302,7 @@ div.img_bg {
   max-width: 76%;
   min-height: 10vh;
   margin: 22px;
-  background:linear-gradient(to right, #eaf39a, #063001);
+  background:linear-gradient(to right, rgb(10 73 1 / 75%), #699270);
   padding: 12px;
   border-radius: 22px;
   font-family:"Oswald",sans-serif;
@@ -322,17 +322,17 @@ div.img_bg {
 }
 
 .viewBtn{
-  background-color:#0042039a;
+  background-color:rgb(2, 54, 2);
   border: none;
   border-radius: 7px;
   padding: 5px;
-  color: white;
+  color:white;
   cursor: pointer;
   margin: 12px;
 }
 
 .viewBtn:hover{
-  color: #0042039a;
+  color: #004203;
   background-color:  white;
 }
 

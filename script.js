@@ -86,29 +86,36 @@ function viewResult(results) {
         viewButton.classList.add('viewBtn');
         viewButton.textContent = 'View Recipe';
 
-        viewButton.addEventListener("click", () => {
+        viewButton.addEventListener("click", async () => {
             document.querySelectorAll('.modal').forEach((button) => {
-                button.onclick = () => {
+                button.onclick = async () => {
                     document.querySelector('.popup').style.display = 'block';
 
+                    const recipeDetails = await getRecipeDetails(recipe.id);
+
                     const rImg = document.querySelector('.recipeBox img');
-                    rImg.src = recipe.image;
-                    rImg.alt = recipe.title;
+                    rImg.src = recipeDetails.image;
+                    rImg.alt = recipeDetails.title;
 
                     const rName = document.querySelector('.recipeBox .rname');
-                    rName.textContent = recipe.title;
+                    rName.textContent = recipeDetails.title;
+                    
 
-                    const rIngredients=document.createElement('ul');
-                    rIngredients.textContent=recipe.ingredients;
+                    const rIngredients=document.querySelector('.recipeBox .rIngredients');
+                    rIngredients.innerHTML='';
+                    recipeDetails.extendedIngredients.forEach(ingredient => {
+                        const p = document.createElement('p');
+                        p.textContent = ingredient.original;
+                        rIngredients.appendChild(p);
+                    });
 
-
-                    const rInstructions=document.createElement('p');
-                    rInstructions.textContent=recipe.instructions;
+                    const rInstructions=document.querySelector('.recipeBox .rInstructions');
+                    rInstructions.innerHTML=recipeDetails.instructions;
                 }
             });
             document.querySelector('.recipeBox span').addEventListener('click',() =>{
                 document.querySelector('.popup').style.display = 'none';
-            })
+            });
 
         });
         recipeModal.appendChild(recipeImg);
