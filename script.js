@@ -40,6 +40,24 @@ async function findRecipe(query) {
     }
 }
 
+//recipedetails api fetch
+
+async function getRecipeDetails(recipeId) {
+    const apiKey = '5a9d81283395453eb818b7f82e920114';
+    const endPoint = `https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=${apiKey}`;
+
+    try {
+        const response = await fetch(endPoint);
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+
+        return await response.json();
+    } catch (error) {
+        console.error('Problem in fetch operation', error);
+    }
+}
+
 //viewResults Function
 
 function viewResult(results) {
