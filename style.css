@@ -316,7 +316,7 @@ div.img_bg {
 }
 
 
-.modal img{
+.modal img,.recipeBox img{
   border-radius: 12px;
   width: 100%;
 }
@@ -337,6 +337,57 @@ div.img_bg {
 }
 
 
+.popup{
+  display: none;
+  position: fixed;
+  bottom:0;
+  background-color: #000000d2;
+  height: 100%;
+  width: 100%;
+  z-index: 10000;
+  overflow:scroll;
+}
+
+
+.recipeBox{
+  /* display:none; */
+  min-height:20vh;
+  width: 40vw;
+  padding: 22px;
+  border-radius: 22px;
+  margin: auto;
+  background-color: rgba(10, 73, 1);
+  box-shadow: 6px 4px 2px rgb(66, 66, 66);
+  
+}
+.recipeBox span{
+  position: absolute;
+  top:0;right: 10px;
+  font-size: 60px;
+  font-weight: bolder;
+  color: white;
+  cursor: pointer;
+  z-index: 10000;
+}
+.recipeBox h2{
+  color: #000000;
+  text-decoration: underline;
+}
+.cross{
+  padding: 3px 7px;
+  height: 24px;
+  margin-top: 20px;
+  background-color:#000000;
+  color: beige;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+}
+
+.flex{
+  display: flex;
+  justify-content: space-between;
+}
 /* Responsiveness */
 
 @media only screen and (max-width:1120px) {
@@ -416,7 +467,9 @@ div.img_bg {
     gap: 22px;
   }
 
-
+  .recipeBox{
+    width: 50vw;
+  }
 
   #aboutUs {
     margin: 2rem;
@@ -476,5 +529,8 @@ div.img_bg {
     height: 60vh;
   }
 
+  .recipeBox{
+    width: 70vw;
+  }
   
 }
