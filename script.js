@@ -5,15 +5,15 @@ const navBar = document.querySelector(".navBar");
 const navLinks = document.querySelectorAll(".navBar li a");
 
 hamburger.addEventListener("click", () => {
-    hamburger.classList.toggle("active");
-    navBar.classList.toggle("active");
+  hamburger.classList.toggle("active");
+  navBar.classList.toggle("active");
 });
 
-navLinks.forEach(link => {
-    link.addEventListener("click", () => {
-        hamburger.classList.remove("active");
-        navBar.classList.remove("active");
-    });
+navLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    hamburger.classList.remove("active");
+    navBar.classList.remove("active");
+  });
 });
 
 // Recipe Finder
@@ -21,115 +21,117 @@ navLinks.forEach(link => {
 // findRecipe function
 
 async function findRecipe(query) {
-    const apiKey = '5a9d81283395453eb818b7f82e920114';
-    const endPoint = `https://api.spoonacular.com/recipes/complexSearch?query=${query}&apiKey=${apiKey}`;
+  const apiKey = "5a9d81283395453eb818b7f82e920114";
+  const endPoint = `https://api.spoonacular.com/recipes/complexSearch?query=${query}&apiKey=${apiKey}`;
 
-    try {
-        const response = await fetch(endPoint);
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-
-        const output = await response.json();
-        console.log('API response:', output);
-
-        viewResult(output.results);
+  try {
+    const response = await fetch(endPoint);
+    if (!response.ok) {
+      throw new Error("Network response was not ok");
     }
-    catch (error) {
-        console.error('Problem in fetch operation', error);
-    }
+
+    const output = await response.json();
+    console.log("API response:", output);
+
+    viewResult(output.results);
+  } catch (error) {
+    console.error("Problem in fetch operation", error);
+  }
 }
 
 //recipedetails api fetch
 
 async function getRecipeDetails(recipeId) {
-    const apiKey = '5a9d81283395453eb818b7f82e920114';
-    const endPoint = `https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=${apiKey}`;
+  const apiKey = "5a9d81283395453eb818b7f82e920114";
+  const endPoint = `https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=${apiKey}`;
 
-    try {
-        const response = await fetch(endPoint);
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-
-        return await response.json();
-    } catch (error) {
-        console.error('Problem in fetch operation', error);
+  try {
+    const response = await fetch(endPoint);
+    if (!response.ok) {
+      throw new Error("Network response was not ok");
     }
+
+    return await response.json();
+  } catch (error) {
+    console.error("Problem in fetch operation", error);
+  }
 }
 
 //viewResults Function
 
 function viewResult(results) {
-    const outputContainer = document.getElementById('output');
-    outputContainer.innerHTML = '';
+  const outputContainer = document.getElementById("output");
+  outputContainer.innerHTML = "";
 
-    if (results.length === 0) {
-        outputContainer.textContent = 'No recipes found.';
-        return;
-    }
+  if (results.length === 0) {
+    outputContainer.textContent = "No recipes found.";
+    return;
+  }
 
-    results.forEach(recipe => {
-        const recipeModal = document.createElement('div');
-        recipeModal.classList.add('modal');
+  results.forEach((recipe) => {
+    const recipeModal = document.createElement("div");
+    recipeModal.classList.add("modal");
 
-        const recipeImg = document.createElement('img');
-        recipeImg.src = recipe.image;
-        recipeImg.alt = recipe.title;
+    const recipeImg = document.createElement("img");
+    recipeImg.src = recipe.image;
+    recipeImg.alt = recipe.title;
 
-        const recipeName = document.createElement('h3');
-        recipeName.classList.add('name');
-        recipeName.textContent = recipe.title;
+    const recipeName = document.createElement("h3");
+    recipeName.classList.add("name");
+    recipeName.textContent = recipe.title;
 
+    const viewButton = document.createElement("button");
+    viewButton.classList.add("viewBtn");
+    viewButton.textContent = "View Recipe";
 
-        const viewButton = document.createElement('button');
-        viewButton.classList.add('viewBtn');
-        viewButton.textContent = 'View Recipe';
+    viewButton.addEventListener("click", async () => {
+      document.querySelectorAll(".modal").forEach((button) => {
+        button.onclick = async () => {
+          document.querySelector(".popup").style.display = "block";
 
-        viewButton.addEventListener("click", async () => {
-            document.querySelectorAll('.modal').forEach((button) => {
-                button.onclick = async () => {
-                    document.querySelector('.popup').style.display = 'block';
+          const recipeDetails = await getRecipeDetails(recipe.id);
 
-                    const recipeDetails = await getRecipeDetails(recipe.id);
+          const rImg = document.querySelector(".recipeBox img");
+          rImg.src = recipeDetails.image;
+          rImg.alt = recipeDetails.title;
 
-                    const rImg = document.querySelector('.recipeBox img');
-                    rImg.src = recipeDetails.image;
-                    rImg.alt = recipeDetails.title;
+          const rName = document.querySelector(".recipeBox .rname");
+          rName.textContent = recipeDetails.title;
 
-                    const rName = document.querySelector('.recipeBox .rname');
-                    rName.textContent = recipeDetails.title;
-                    
+          const rIngredients = document.querySelector(
+            ".recipeBox .rIngredients"
+          );
+          rIngredients.innerHTML = "";
+          recipeDetails.extendedIngredients.forEach((ingredient) => {
+            const p = document.createElement("p");
+            p.textContent = ingredient.original;
+            rIngredients.appendChild(p);
+          });
 
-                    const rIngredients=document.querySelector('.recipeBox .rIngredients');
-                    rIngredients.innerHTML='';
-                    recipeDetails.extendedIngredients.forEach(ingredient => {
-                        const p = document.createElement('p');
-                        p.textContent = ingredient.original;
-                        rIngredients.appendChild(p);
-                    });
-
-                    const rInstructions=document.querySelector('.recipeBox .rInstructions');
-                    rInstructions.innerHTML=recipeDetails.instructions;
-                }
-            });
-            document.querySelector('.recipeBox span').addEventListener('click',() =>{
-                document.querySelector('.popup').style.display = 'none';
-            });
-
+          const rInstructions = document.querySelector(
+            ".recipeBox .rInstructions"
+          );
+          rInstructions.innerHTML = recipeDetails.instructions;
+        };
+      });
+      document
+        .querySelector(".recipeBox span")
+        .addEventListener("click", () => {
+          document.querySelector(".popup").style.display = "none";
         });
-        recipeModal.appendChild(recipeImg);
-        recipeModal.appendChild(recipeName);
-        recipeModal.appendChild(viewButton);
-
-        outputContainer.appendChild(recipeModal);
-
     });
+    recipeModal.appendChild(recipeImg);
+    recipeModal.appendChild(recipeName);
+    recipeModal.appendChild(viewButton);
 
+    outputContainer.appendChild(recipeModal);
+  });
 }
 
-document.querySelector('.btn-search').addEventListener('click', () => {
-    const query = document.querySelector('.input-search').value;
-    findRecipe(query);
+document.querySelector(".btn-search").addEventListener("click", () => {
+  const query = document.querySelector(".input-search").value;
+  findRecipe(query);
 });
+
+//recipe book
 
