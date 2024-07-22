@@ -376,6 +376,11 @@ width: 70%;
   cursor: pointer;
   z-index: 10000;
 }
+.recipeBox .rname{
+  color: #000000;
+  text-decoration: underline;
+  font-family: "lobster",sans-serif;
+}
 .recipeBox h2{
   color: #000000;
   text-decoration: underline;

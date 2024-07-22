@@ -1,5 +1,5 @@
 // Hamburger Menu
-
+document.addEventListener('DOMContentLoaded', () => {
 const hamburger = document.querySelector(".hamburger");
 const navBar = document.querySelector(".navBar");
 const navLinks = document.querySelectorAll(".navBar li a");
@@ -21,7 +21,7 @@ navLinks.forEach((link) => {
 // findRecipe function
 
 async function findRecipe(query) {
-  const apiKey = "5a9d81283395453eb818b7f82e920114";
+  const apiKey = "b846c1bf5fa848c69c6f373d0e6c7d83";
   const endPoint = `https://api.spoonacular.com/recipes/complexSearch?query=${query}&apiKey=${apiKey}`;
 
   try {
@@ -42,7 +42,7 @@ async function findRecipe(query) {
 //recipedetails api fetch
 
 async function getRecipeDetails(recipeId) {
-  const apiKey = "5a9d81283395453eb818b7f82e920114";
+  const apiKey = "b846c1bf5fa848c69c6f373d0e6c7d83";
   const endPoint = `https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=${apiKey}`;
 
   try {
@@ -135,7 +135,7 @@ document.querySelector(".btn-search").addEventListener("click", () => {
 
 //recipe book
 
-document.addEventListener('DOMContentLoaded', () => {
+
   const recipeForm = document.getElementById('recipeForm');
   const recipesContainer = document.getElementById('recipesContainer');
 
