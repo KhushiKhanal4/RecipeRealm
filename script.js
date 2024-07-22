@@ -140,7 +140,7 @@ document.querySelector(".btn-search").addEventListener("click", () => {
   const recipesContainer = document.getElementById('recipesContainer');
 
   
-  const recipes = JSON.parse(localStorage.getItem('recipes')) ;
+  const recipes = JSON.parse(localStorage.getItem('recipes')) || [];
 
  
   const displayRecipes = () => {
@@ -185,7 +185,7 @@ document.querySelector(".btn-search").addEventListener("click", () => {
   displayRecipes();
 
  
-  recipeForm.addEventListener('submit', (e) => {
+  recipeForm.addEventListener("submit", (e) => {
       e.preventDefault();
       e.preventDefault();
 
