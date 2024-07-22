@@ -4,7 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Changa:wght@200..800&family=Playwrite+CU:wght@100..400&family=Satisfy&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Changa:wght@200..800&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playwrite+CU:wght@100..400&family=Satisfy&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 
 body,
 html {
@@ -305,7 +305,8 @@ div.img_bg {
   background:linear-gradient(to right, rgb(10 73 1 / 75%), #699270);
   padding: 12px;
   border-radius: 22px;
-  font-family:"Oswald",sans-serif;
+  font-family: "Lobster",sans-serif;
+  color: rgb(1, 32, 1);
   
 }
 
@@ -316,7 +317,7 @@ div.img_bg {
 }
 
 
-.modal img,.recipeBox img{
+.modal img{
   border-radius: 12px;
   width: 100%;
 }
@@ -329,6 +330,8 @@ div.img_bg {
   color:white;
   cursor: pointer;
   margin: 12px;
+  font-family: "Oswald",sans-serif;
+  letter-spacing: 1px;
 }
 
 .viewBtn:hover{
@@ -350,21 +353,25 @@ div.img_bg {
 
 
 .recipeBox{
-  /* display:none; */
-  min-height:20vh;
-  width: 40vw;
-  padding: 22px;
+  min-height: 40vh;
+  width: 50vw;
+  padding: 13px;
   border-radius: 22px;
   margin: auto;
-  background-color: rgba(10, 73, 1);
-  box-shadow: 6px 4px 2px rgb(66, 66, 66);
-  
+  background-color: aliceblue;
+  box-shadow: 6px 4px 2px rgb(24 24 24 / 92%);
+  font-family: "Changa", sans-serif;
+}
+
+.recipeBox img{
+border-radius: 12px;
+width: 70%;
 }
 .recipeBox span{
   position: absolute;
-  top:0;right: 10px;
+  top: -30px;right: 10px;
   font-size: 60px;
-  font-weight: bolder;
+  font-weight: 400;
   color: white;
   cursor: pointer;
   z-index: 10000;
@@ -372,22 +379,9 @@ div.img_bg {
 .recipeBox h2{
   color: #000000;
   text-decoration: underline;
-}
-.cross{
-  padding: 3px 7px;
-  height: 24px;
-  margin-top: 20px;
-  background-color:#000000;
-  color: beige;
-  font-weight: 700;
-  border: none;
-  border-radius: 8px;
+  font-family: "lobster",sans-serif;
 }
 
-.flex{
-  display: flex;
-  justify-content: space-between;
-}
 /* Responsiveness */
 
 @media only screen and (max-width:1120px) {
@@ -497,6 +491,14 @@ div.img_bg {
 
   #output{
     grid-template-columns: 1fr 1fr;
+  }
+
+  .recipeBox{
+    font-size: 0.68rem;
+  }
+  .recipeBox span{
+    font-size: 40px;
+    top: -15px;
   }
 }
 
