@@ -187,6 +187,7 @@ document.querySelector(".btn-search").addEventListener("click", () => {
  
   recipeForm.addEventListener('submit', (e) => {
       e.preventDefault();
+      e.preventDefault();
 
       const newRecipe = {
           name: recipeForm.recipeName.value,
