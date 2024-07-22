@@ -135,3 +135,70 @@ document.querySelector(".btn-search").addEventListener("click", () => {
 
 //recipe book
 
+document.addEventListener('DOMContentLoaded', () => {
+  const recipeForm = document.getElementById('recipeForm');
+  const recipesContainer = document.getElementById('recipesContainer');
+
+  
+  const recipes = JSON.parse(localStorage.getItem('recipes')) ;
+
+ 
+  const displayRecipes = () => {
+      recipesContainer.innerHTML = '';
+      recipes.forEach((recipe, index) => {
+          const recipeCard = document.createElement('div');
+          recipeCard.classList.add('recipe-card');
+          recipeCard.innerHTML = `
+          <div class="flex">
+              <h3 data-index="${index}">${recipe.name}</h3>
+              <button class="delete-recipe" data-index="${index}">Delete</button>
+              </div>
+              <div class="contents" id="contents-${index}">
+                  <img src="${recipe.image}" alt="${recipe.name}">
+                  <div class="ingredients">
+                      <h4>Ingredients</h4>
+                      <p>${recipe.ingredients}</p>
+                  </div>
+                  <div class="instructions">
+                      <h4>Instructions</h4>
+                      <p>${recipe.instructions}</p>
+                  </div>
+                   
+              </div>
+          `;
+          recipesContainer.appendChild(recipeCard);
+
+          const recipeHeader = recipeCard.querySelector('h3');
+          const recipeContent = recipeCard.querySelector('.contents');
+          const deleteButton = recipeCard.querySelector('.delete-recipe');
+          recipeHeader.addEventListener('click', () => {
+              recipeContent.style.display = recipeContent.style.display === 'none' ? 'block' : 'none';
+          });
+          deleteButton.addEventListener('click', () => {
+            recipes.splice(index, 1);
+            localStorage.setItem('recipes', JSON.stringify(recipes));
+            displayRecipes();
+        });
+      });
+  };
+
+  displayRecipes();
+
+ 
+  recipeForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const newRecipe = {
+          name: recipeForm.recipeName.value,
+          image: recipeForm.recipeImage.value,
+          ingredients: recipeForm.ingredients.value,
+          instructions: recipeForm.instructions.value
+      };
+
+      recipes.push(newRecipe);
+      localStorage.setItem('recipes', JSON.stringify(recipes));
+      displayRecipes();
+
+      recipeForm.reset();
+  });
+});

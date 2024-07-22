@@ -431,6 +431,7 @@ width: 70%;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  
 }
 
 .recipe-card {
@@ -438,16 +439,18 @@ width: 70%;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
+  
 }
 
 .recipe-card h3 {
-  background:linear-gradient(to left, #ffffff, #a2b843);
+  
   margin: 0;
   padding: 1rem;
   font-size: 1.5rem;
   color: #000000;
   cursor: pointer;
   font-family: "lobster",sans-serif;
+  
 }
 
 .recipe-card .contents {
@@ -478,6 +481,24 @@ left: 30%;
   margin: 0.5rem 0;
   font-size: 1rem;
   color: #333;
+}
+.flex{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.delete-recipe{
+  background-color: #014704;
+  color: white;
+padding: 7px;
+margin-right: 10px;
+border-radius: 10px;
+cursor: pointer;
+}
+
+.delete-recipe:hover{
+  background-color: #216e26;
 }
 
 /* Responsiveness */
