@@ -388,7 +388,7 @@ width: 70%;
 .form-container {
   margin: 2rem 8rem;
   padding: 2rem;
-  background-color: #fff;
+  background-color: rgb(255, 255, 255);
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -407,7 +407,7 @@ width: 70%;
 .form-container input, .form-container textarea {
   margin-top: 0.5rem;
   padding: 0.5rem;
-  border: 1px solid #ccc;
+  border: 1px solid #a09f9f;
   border-radius: 5px;
 }
 
@@ -423,7 +423,7 @@ width: 70%;
 }
 
 .form-container button:hover {
-  background-color: #013404;
+  background-color: #126d18;
 }
 
 .recipes-container {
@@ -434,42 +434,47 @@ width: 70%;
 }
 
 .recipe-card {
-  background-color: #000000;
+  background:linear-gradient(to left, #ffffff, #a2b843);
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
 }
 
 .recipe-card h3 {
-  background-color: #000000;
+  background:linear-gradient(to left, #ffffff, #a2b843);
   margin: 0;
   padding: 1rem;
   font-size: 1.5rem;
-  color: #014704;
+  color: #000000;
   cursor: pointer;
+  font-family: "lobster",sans-serif;
 }
 
-.recipe-card .content {
+.recipe-card .contents {
   display: none;
   padding: 1rem;
+  font-family: "Changa",sans-serif
 }
 
-.recipe-card .content img {
-  width: 100%;
-  height: auto;
+.recipe-card .contents img {
+  border-radius: 12px;
+width: 40%;
+ position:relative;
+left: 30%;
   border-radius: 10px;
 }
 
-.recipe-card .content .ingredients, .recipe-card .content .instructions {
+.recipe-card .contents .ingredients, .recipe-card .contents .instructions {
   margin-top: 1rem;
 }
 
-.recipe-card .content .ingredients h4, .recipe-card .content .instructions h4 {
+.recipe-card .contents .ingredients h4, .recipe-card .contents .instructions h4 {
   margin: 0;
   font-size: 1.2rem;
+  font-family: "lobster",sans-serif
 }
 
-.recipe-card .content p {
+.recipe-card .contents p {
   margin: 0.5rem 0;
   font-size: 1rem;
   color: #333;
