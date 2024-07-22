@@ -130,7 +130,7 @@ div.img_bg {
 }
 
 .content {
-  font-family: "Calligraffitti", cursive;
+  font-family: "lobster", sans-serif;
   font-weight: 700;
   font-size: 1.5rem;
   position: absolute;
@@ -140,7 +140,7 @@ div.img_bg {
   text-align: center;
   color: #014704;
   animation: fadeInScale 3s ease-in-out forwards; 
-  animation-delay:  1s;
+  animation-delay:  0.7s;
   opacity: 0;
 
 }
@@ -502,13 +502,6 @@ cursor: pointer;
 
 .delete-recipe:hover{
   background-color: #216e26;
-}
-
-footer{
-  background-color: #0c0b0bcc;
-  color: white;
-  text-align: center;
-  padding: 2px;
 }
 
 /* Responsiveness */
