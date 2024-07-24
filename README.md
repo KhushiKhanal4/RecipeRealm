@@ -22,11 +22,11 @@ RecipeRealm is a web application designed to serve as both a recipe finder and a
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/yourusername/reciperealm.git
+    git clone https://github.com/KhushiKhanal4/RecipeRealm.git
     ```
 2. Navigate to the project directory:
     ```sh
-    cd reciperealm
+    cd RecipeRealm
     ```
 3. Open `index.html` in your preferred browser to view the application.
 
