@@ -168,8 +168,8 @@ div.img_bg {
 
 /* About Us section */
 
-#aboutUs {
-  margin: 1rem 8rem;
+.aboutUs,.manageRecipes {
+  margin: 5rem 8rem;
 }
 
 .heading {
@@ -230,6 +230,10 @@ div.img_bg {
 }
 
 /* Recipe Search */
+#find{
+  margin-top: 5rem;
+}
+
 
 .searchBar * {
   box-sizing: border-box;
@@ -348,7 +352,9 @@ div.img_bg {
   height: 100%;
   width: 100%;
   z-index: 10000;
+  margin: 0rem;
   overflow:scroll;
+  object-fit: cover;
 }
 
 
@@ -587,8 +593,8 @@ cursor: pointer;
     width: 50vw;
   }
 
-  #aboutUs {
-    margin: 2rem;
+  .aboutUs,.manageRecipes {
+    margin: 5.3rem 2rem 2rem 2rem;
   }
 
   .heading {
@@ -650,7 +656,7 @@ cursor: pointer;
   }  
   
   .heading {
-    font-size: 1.1rem;
+    font-size: 2rem;
   }
 
   .form-container label , .recipe-card h3 ,.recipe-card .contents .ingredients h4, .recipe-card .contents .instructions h4 {
