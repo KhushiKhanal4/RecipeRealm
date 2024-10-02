@@ -14,6 +14,7 @@ html {
   width: 100%;
   overflow-x: hidden;
   background-color: azure;
+  scroll-behavior: smooth;
 }
 span{
   display: inline-block;
